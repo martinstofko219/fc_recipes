@@ -21,7 +21,7 @@ class CategoriesPage extends StatelessWidget {
           ),
           children: <Widget>[
             ...DUMMY_CATEGORIES.map((category) {
-              return CategoryItem(category.name, category.color);
+              return CategoryItem(category);
             }).toList()
           ],
         ),

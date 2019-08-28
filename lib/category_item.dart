@@ -1,39 +1,51 @@
 import 'package:flutter/material.dart';
 
-class CategoryItem extends StatelessWidget {
-  final String name;
-  final Color color;
+import 'models/category.dart';
+import 'pages/meals_page.dart';
 
-  const CategoryItem(this.name, this.color);
+class CategoryItem extends StatelessWidget {
+  final Category category;
+
+  const CategoryItem(this.category);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        boxShadow: <BoxShadow>[
-          BoxShadow(
-            color: Colors.black26,
-            blurRadius: 4.0,
-            offset: Offset(0, 1),
+    return InkWell(
+      borderRadius: BorderRadius.circular(16.0),
+      splashColor: Theme.of(context).splashColor,
+      onTap: () => Navigator.of(context).push(MaterialPageRoute(
+        builder: (_) => MealsPage(category.id, category.name),
+      )),
+      child: Container(
+        decoration: BoxDecoration(
+          boxShadow: <BoxShadow>[
+            BoxShadow(
+              color: Colors.black26,
+              blurRadius: 4.0,
+              offset: Offset(0, 1),
+            ),
+            BoxShadow(
+              color: Colors.black12,
+              blurRadius: 4.0,
+              offset: Offset(0, 2),
+            )
+          ],
+          borderRadius: BorderRadius.circular(16.0),
+          gradient: LinearGradient(
+            colors: [category.color.withOpacity(0.64), category.color],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
           ),
-          BoxShadow(
-            color: Colors.black12,
-            blurRadius: 4.0,
-            offset: Offset(0, 2),
-          )
-        ],
-        borderRadius: BorderRadius.circular(16.0),
-        gradient: LinearGradient(
-          colors: [color.withOpacity(0.64), color],
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
         ),
-      ),
-      padding: const EdgeInsets.all(16.0),
-      child: Center(
-        child: Text(
-          name,
-          style: Theme.of(context).textTheme.subhead,
+        padding: const EdgeInsets.all(16.0),
+        child: Center(
+          child: Text(
+            category.name.toUpperCase(),
+            style: Theme.of(context).textTheme.subhead.copyWith(
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black87,
+                ),
+          ),
         ),
       ),
     );
