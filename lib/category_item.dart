@@ -12,8 +12,8 @@ class CategoryItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       borderRadius: BorderRadius.circular(16.0),
-      splashColor: Theme.of(context).splashColor,
       onTap: () => _navigateToMeals(context),
+      splashColor: Theme.of(context).splashColor,
       child: Container(
         decoration: BoxDecoration(
           boxShadow: <BoxShadow>[

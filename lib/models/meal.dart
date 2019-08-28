@@ -34,4 +34,36 @@ class Meal {
     this.isVegan = false,
     this.isVegetarian = false,
   });
+
+  String get complexityString {
+    switch (complexity) {
+      case Complexity.Simple:
+        return 'Simple';
+        break;
+      case Complexity.Challenging:
+        return 'Challenging';
+        break;
+      case Complexity.Hard:
+        return 'Hard';
+        break;
+      default:
+        return 'Unknown';
+    }
+  }
+
+  String get affordabilityString {
+    switch (affordability) {
+      case Affordability.Affordable:
+        return 'Affordable';
+        break;
+      case Affordability.Pricey:
+        return 'Pricey';
+        break;
+      case Affordability.Luxurious:
+        return 'Luxurious';
+        break;
+      default:
+        return 'Unknown';
+    }
+  }
 }
