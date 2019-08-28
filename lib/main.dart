@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.deepOrange,
         accentColor: Colors.indigoAccent,
         canvasColor: Color.fromRGBO(245, 245, 245, 1),
-        fontFamily: 'Raleway',
+        fontFamily: 'SourceSansPro',
       ),
       home: CategoriesPage(),
     );
