@@ -13,9 +13,7 @@ class CategoryItem extends StatelessWidget {
     return InkWell(
       borderRadius: BorderRadius.circular(16.0),
       splashColor: Theme.of(context).splashColor,
-      onTap: () => Navigator.of(context).push(MaterialPageRoute(
-        builder: (_) => MealsPage(category.id, category.name),
-      )),
+      onTap: () => _navigateToMeals(context),
       child: Container(
         decoration: BoxDecoration(
           boxShadow: <BoxShadow>[
@@ -49,5 +47,11 @@ class CategoryItem extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void _navigateToMeals(BuildContext context) {
+    Navigator.of(context).push(MaterialPageRoute(
+      builder: (_) => MealsPage(category.id, category.name),
+    ));
   }
 }
