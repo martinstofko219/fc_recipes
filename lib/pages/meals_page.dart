@@ -20,12 +20,14 @@ class MealsPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(categoryName),
       ),
-      body: ListView.builder(
-        itemBuilder: (context, index) {
-          final meal = categoryMeals[index];
-          return MealItem(meal);
-        },
-        itemCount: categoryMeals.length,
+      body: SafeArea(
+        child: ListView.builder(
+          itemBuilder: (context, index) {
+            final meal = categoryMeals[index];
+            return MealItem(meal);
+          },
+          itemCount: categoryMeals.length,
+        ),
       ),
     );
   }

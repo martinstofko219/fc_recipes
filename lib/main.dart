@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       title: 'Yummy Meals',
       theme: ThemeData(
         primarySwatch: Colors.deepOrange,
-        accentColor: Colors.tealAccent,
+        accentColor: Colors.teal,
         canvasColor: Color.fromRGBO(245, 245, 245, 1),
         fontFamily: 'SourceSansPro',
       ),
