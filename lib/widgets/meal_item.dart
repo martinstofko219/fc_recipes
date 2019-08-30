@@ -20,37 +20,8 @@ class MealItem extends StatelessWidget {
           children: <Widget>[
             Stack(
               children: <Widget>[
-                ClipRRect(
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(8.0),
-                      topRight: Radius.circular(8.0)),
-                  child: Image.network(
-                    meal.imageUrl,
-                    height: 250.0,
-                    width: double.infinity,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-                Positioned(
-                  bottom: 8.0,
-                  right: 16.0,
-                  child: Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(4.0),
-                      color: Colors.black54,
-                    ),
-                    padding: const EdgeInsets.all(8.0),
-                    width: 248,
-                    child: Text(
-                      meal.name,
-                      style: Theme.of(context).textTheme.headline.copyWith(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w900,
-                          ),
-                      textAlign: TextAlign.right,
-                    ),
-                  ),
-                ),
+                _buildMealImage(meal.imageUrl),
+                _buildMealName(context, meal.name),
               ],
             ),
             Padding(
@@ -68,6 +39,42 @@ class MealItem extends StatelessWidget {
               ),
             ),
           ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildMealImage(String imageUrl) {
+    return ClipRRect(
+      borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(8.0), topRight: Radius.circular(8.0)),
+      child: Image.network(
+        imageUrl,
+        height: 250.0,
+        width: double.infinity,
+        fit: BoxFit.cover,
+      ),
+    );
+  }
+
+  Widget _buildMealName(BuildContext context, String name) {
+    return Positioned(
+      bottom: 8.0,
+      right: 16.0,
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(4.0),
+          color: Colors.black54,
+        ),
+        padding: const EdgeInsets.all(8.0),
+        width: 248,
+        child: Text(
+          name,
+          style: Theme.of(context).textTheme.headline.copyWith(
+                color: Colors.white,
+                fontWeight: FontWeight.w900,
+              ),
+          textAlign: TextAlign.right,
         ),
       ),
     );
