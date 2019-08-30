@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../models/meal.dart';
+import '../pages/meal_details_page.dart';
 
 class MealItem extends StatelessWidget {
   final Meal meal;
@@ -10,7 +11,7 @@ class MealItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: _navigateToMeal,
+      onTap: () => _navigateToMeal(context),
       splashColor: Theme.of(context).splashColor,
       child: Card(
         elevation: 4.0,
@@ -90,5 +91,8 @@ class MealItem extends StatelessWidget {
     );
   }
 
-  void _navigateToMeal() {}
+  void _navigateToMeal(BuildContext context) {
+    Navigator.of(context)
+        .pushNamed(MealDetailsPage.routeName, arguments: meal.id);
+  }
 }
