@@ -32,8 +32,7 @@ class MealItem extends StatelessWidget {
                 children: <Widget>[
                   _buildMealDataRow(
                       context, Icons.watch_later, '${meal.cookTime} min'),
-                  _buildMealDataRow(
-                      context, Icons.category, meal.complexityString),
+                  _buildMealDataRow(context, Icons.work, meal.complexityString),
                   _buildMealDataRow(
                       context, Icons.monetization_on, meal.affordabilityString),
                 ],
