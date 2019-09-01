@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'pages/categories_page.dart';
 import 'pages/meal_details_page.dart';
 import 'pages/meals_page.dart';
+import 'pages/tabs_page.dart';
 
 void main() => runApp(MyApp());
 
@@ -17,8 +18,9 @@ class MyApp extends StatelessWidget {
         canvasColor: Color.fromRGBO(245, 245, 245, 1),
         fontFamily: 'SourceSansPro',
       ),
-      home: CategoriesPage(),
+      home: TabsPage(),
       routes: {
+        // '/': (_) => TabsPage(),
         MealsPage.routeName: (_) => MealsPage(),
         MealDetailsPage.routeName: (_) => MealDetailsPage(),
       },
