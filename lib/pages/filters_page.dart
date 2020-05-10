@@ -48,10 +48,8 @@ class _FiltersPageState extends State<FiltersPage> {
           children: <Widget>[
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Text(
-                'Adjust meal filters',
-                style: Theme.of(context).textTheme.title,
-              ),
+              child: Text('Adjust meal filters',
+                  style: Theme.of(context).textTheme.headline6),
             ),
             Expanded(
               child: ListView(

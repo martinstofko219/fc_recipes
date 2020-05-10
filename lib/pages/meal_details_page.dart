@@ -43,7 +43,7 @@ class MealDetailsPage extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(8.0, 16.0, 8.0, 8.0),
       child: Text(
         title,
-        style: Theme.of(context).textTheme.title,
+        style: Theme.of(context).textTheme.headline6,
       ),
     );
   }
@@ -54,7 +54,8 @@ List<Widget> _buildIngredientsList(
   return ingredients.map((ingredient) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
-      child: Text(' - $ingredient', style: Theme.of(context).textTheme.body1),
+      child:
+          Text(' - $ingredient', style: Theme.of(context).textTheme.bodyText2),
     );
   }).toList();
 }

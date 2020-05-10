@@ -20,7 +20,7 @@ class NavDrawer extends StatelessWidget {
               'Yummy Meals',
               style: Theme.of(context)
                   .textTheme
-                  .headline
+                  .headline5
                   .copyWith(color: Colors.white),
             ),
           ),

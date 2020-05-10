@@ -13,7 +13,7 @@ class NavDrawerItem extends StatelessWidget {
     return ListTile(
       title: Text(
         text,
-        style: Theme.of(context).textTheme.subhead,
+        style: Theme.of(context).textTheme.subtitle1,
       ),
       trailing: Icon(icon),
       onTap: onTap,

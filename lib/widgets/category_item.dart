@@ -39,7 +39,7 @@ class CategoryItem extends StatelessWidget {
         child: Center(
           child: Text(
             category.name.toUpperCase(),
-            style: Theme.of(context).textTheme.subhead.copyWith(
+            style: Theme.of(context).textTheme.subtitle1.copyWith(
                   fontWeight: FontWeight.bold,
                   color: Colors.black87,
                 ),

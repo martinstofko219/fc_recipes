@@ -70,7 +70,7 @@ class MealItem extends StatelessWidget {
         width: 248,
         child: Text(
           name,
-          style: Theme.of(context).textTheme.headline.copyWith(
+          style: Theme.of(context).textTheme.headline5.copyWith(
                 color: Colors.white,
                 fontWeight: FontWeight.w900,
               ),
